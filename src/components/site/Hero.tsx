@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { ShieldCheck, Terminal, Fingerprint } from "lucide-react";
 
-const TITLES = ["Cybersecurity Student", "CTF Player", "Developer", "Blue Team Learner"];
+const TITLES = ["AI & Cybersecurity Student", "Security Engineer", "Blue Team Learner", "AI Security Enthusiast"];
 
 function useTypingCycle(words: string[]) {
   const [text, setText] = useState("");
@@ -30,9 +30,9 @@ function useTypingCycle(words: string[]) {
 }
 
 const stats = [
-  { value: "50+", label: "CTF challenges solved" },
-  { value: "30+", label: "Hands-on labs completed" },
-  { value: "8+", label: "Security projects built" },
+  { value: "3", label: "CTF challenges solved" },
+  { value: "6", label: "Projects completed" },
+  { value: "3", label: "Internships completed" },
 ];
 
 function Silhouette() {
@@ -75,11 +75,11 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-          <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[11px] text-muted-foreground">
-            <ShieldCheck size={13} className="text-cyan" /> // best in intrusions &amp; every trust value
+          <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            <ShieldCheck size={13} className="text-cyan" /> AI security • cybersecurity
           </span>
 
-          <h1 className="mt-6 font-display text-4xl leading-[1.05] font-bold tracking-tight sm:text-6xl">
+          <h1 className="mt-6 font-display text-4xl leading-[1.05] font-bold tracking-[-0.04em] sm:text-6xl">
             Hi, I&apos;m <span className="neon-text text-glow">Assma Masrafi</span>
           </h1>
 
@@ -90,20 +90,21 @@ export function Hero() {
           </p>
 
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Learning to break systems before the bad guys do — through CTFs, home labs and
-            hands-on projects. Building the skills today to defend your systems tomorrow.
+            Engineering student specialized in cybersecurity, with a focus on secure AI systems,
+            intrusion detection, governance and defensive architecture. I build practical projects
+            and apply security thinking to real environments and business use cases.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="glow-hover rounded-full border border-neon/60 bg-primary/20 px-6 py-3 font-mono text-sm text-foreground glow-neon"
+              className="glow-hover rounded-full border border-neon/60 bg-[linear-gradient(135deg,rgba(132,94,247,0.25),rgba(34,211,238,0.12))] px-6 py-3 font-mono text-sm text-foreground glow-neon"
             >
               View my work
             </a>
             <a
               href="#contact"
-              className="glow-hover rounded-full border border-border px-6 py-3 font-mono text-sm text-muted-foreground hover:text-foreground"
+              className="glow-hover rounded-full border border-border bg-secondary/40 px-6 py-3 font-mono text-sm text-muted-foreground hover:text-foreground"
             >
               Get in touch
             </a>

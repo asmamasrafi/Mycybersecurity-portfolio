@@ -18,11 +18,11 @@ function LinkedinIcon({ size = 18 }: { size?: number }) {
 }
 
 const socials: { icon: ComponentType<{ size?: number }>; label: string; href: string }[] = [
-  { icon: GithubIcon, label: "GitHub", href: "#" },
-  { icon: LinkedinIcon, label: "LinkedIn", href: "#" },
-  { icon: Mail, label: "Email", href: "#" },
-  { icon: Flag, label: "TryHackMe", href: "#" },
-  { icon: Send, label: "Telegram", href: "#" },
+  { icon: GithubIcon, label: "GitHub", href: "https://github.com/assma-masrafi" },
+  { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/assma-masrafi" },
+  { icon: Mail, label: "Email", href: "mailto:asmamasrafi.2004@gmail.com" },
+  { icon: Flag, label: "TryHackMe", href: "https://tryhackme.com/" },
+  { icon: Send, label: "Telegram", href: "https://t.me/assma_masrafi" },
 ];
 
 export function Contact() {
@@ -30,12 +30,12 @@ export function Contact() {
     <section id="contact" className="relative py-24">
       <div className="mx-auto max-w-3xl px-5 text-center">
         <p className="font-mono text-xs text-muted-foreground">// let&apos;s talk</p>
-        <h2 className="mt-4 font-display text-3xl leading-tight font-bold tracking-tight sm:text-5xl">
-          Message me <span className="neon-text text-glow">before the hackers do.</span>
+        <h2 className="mt-4 font-display text-3xl leading-tight font-bold tracking-[-0.04em] sm:text-5xl">
+          Let&apos;s build <span className="neon-text text-glow">secure AI systems.</span>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-          Open to internships, CTF teams and any project where I can learn by defending something
-          real.
+          Open to internship and final-year project opportunities in AI security, cybersecurity,
+          governance and secure architecture.
         </p>
 
         <div className="glass glow-neon mx-auto mt-10 flex w-fit flex-wrap justify-center gap-3 rounded-2xl p-4">
@@ -43,6 +43,8 @@ export function Contact() {
             <a
               key={label}
               href={href}
+              target="_blank"
+              rel="noreferrer"
               aria-label={label}
               className="glow-hover flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-secondary/40 text-muted-foreground hover:text-foreground"
             >

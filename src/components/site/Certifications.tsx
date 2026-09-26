@@ -4,12 +4,10 @@ import { Award, BadgeCheck, Cpu, Lock, ShieldHalf, Wifi } from "lucide-react";
 type Status = "Earned" | "In progress" | "Planned";
 
 const certs: { title: string; issuer: string; year: string; status: Status; icon: typeof Award }[] = [
-  { title: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", year: "2024", status: "Earned", icon: Wifi },
-  { title: "Google Cybersecurity Certificate", issuer: "Google · Coursera", year: "2025", status: "Earned", icon: BadgeCheck },
-  { title: "Cyber Security 101", issuer: "TryHackMe", year: "2025", status: "Earned", icon: ShieldHalf },
-  { title: "CompTIA Security+ (SY0-701)", issuer: "CompTIA", year: "2026", status: "In progress", icon: Lock },
-  { title: "CEH — Certified Ethical Hacker", issuer: "EC-Council", year: "2027", status: "Planned", icon: Cpu },
-  { title: "OSCP — Offensive Security", issuer: "OffSec", year: "long-term", status: "Planned", icon: Award },
+  { title: "Cybersecurity and Cloud Fundamentals 1.0", issuer: "Fortinet", year: "2026", status: "Earned", icon: Wifi },
+  { title: "Endpoint Security", issuer: "Cisco Networking Academy", year: "2026", status: "Earned", icon: BadgeCheck },
+  { title: "Cyber Threat Management", issuer: "Cisco Networking Academy", year: "2025", status: "Earned", icon: ShieldHalf },
+  { title: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", year: "2025", status: "Earned", icon: Lock },
 ];
 
 const styles: Record<Status, string> = {

@@ -4,13 +4,14 @@ import { Intro } from "@/components/site/Intro";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
+import { Experience } from "@/components/site/Experience";
 import { Projects } from "@/components/site/Projects";
 import { Certifications } from "@/components/site/Certifications";
 import { Contact } from "@/components/site/Contact";
 
 const title = "Assma Masrafi — Cybersecurity Portfolio";
 const description =
-  "Cybersecurity student, CTF player and developer. Security tools, home labs, write-ups and certifications.";
+  "Cybersecurity engineering student focused on AI security, secure architectures, red/blue team practices and risk governance.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,6 +41,7 @@ function Index() {
         <main>
           <Hero />
           <About />
+          <Experience />
           <Projects />
           <Certifications />
           <Contact />

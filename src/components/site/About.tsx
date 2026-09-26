@@ -2,13 +2,13 @@ import { motion } from "motion/react";
 import { GraduationCap, MapPin, Flag, Radar } from "lucide-react";
 
 const details = [
-  { icon: GraduationCap, label: "Cybersecurity student — networks & defensive security" },
-  { icon: MapPin, label: "Based in Europe · open to internships" },
-  { icon: Flag, label: "Weekly CTF player (web, forensics, OSINT)" },
-  { icon: Radar, label: "Currently: home lab with SIEM + detection rules" },
+  { icon: GraduationCap, label: "5th-year engineering student in Cybersecurity — ENSA Agadir" },
+  { icon: MapPin, label: "Based in Agadir, Morocco · open to 6-month internship / PFE" },
+  { icon: Flag, label: "Focused on AI security, red/blue team practices and secure architectures" },
+  { icon: Radar, label: "Interested in secure AI systems, Big Data security and risk governance" },
 ];
 
-const tags = ["#Cybersecurity", "#Python", "#React", "#Linux", "#Networking", "#CTF", "#BurpSuite", "#Wireshark"];
+const tags = ["#Cybersecurity", "#AI Security", "#Python", "#Big Data", "#Red Team", "#Blue Team", "#OWASP", "#Risk Governance"];
 
 export function About() {
   return (
@@ -35,13 +35,15 @@ export function About() {
             className="glass glow-hover rounded-2xl p-7 md:col-span-2"
           >
             <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-              I&apos;m a cybersecurity student fascinated by how systems break — and how to keep
-              them standing. My days go into capture-the-flag challenges, building small security
-              tools, and running a home lab where I attack and then defend my own machines.
+              I&apos;m a cybersecurity engineering student with a strong interest in how AI systems,
+              data platforms and business applications can be secured in real-world environments.
+              I enjoy exploring offensive and defensive approaches, from intrusion testing to
+              secure architecture design and governance.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              I like clean documentation as much as a clean exploit: every lab ends with notes,
-              detections and a write-up.
+              My work combines cybersecurity, secure software development, risk analysis and hands-on
+              labs, with a practical interest in AI security, Big Data security and enterprise
+              security audits.
             </p>
             <ul className="mt-6 space-y-3">
               {details.map(({ icon: Icon, label }) => (
@@ -63,10 +65,10 @@ export function About() {
             <p className="font-mono text-[11px] tracking-widest text-muted-foreground">CURRENT_FOCUS</p>
             <div className="mt-5 space-y-5">
               {[
-                { k: "Offensive basics", v: 75 },
-                { k: "Detection & SIEM", v: 60 },
-                { k: "Scripting / Python", v: 80 },
-                { k: "Cloud security", v: 40 },
+                { k: "Cybersecurity", v: 85 },
+                { k: "AI security", v: 75 },
+                { k: "Python & scripting", v: 80 },
+                { k: "Risk governance", v: 70 },
               ].map((s) => (
                 <div key={s.k}>
                   <div className="flex justify-between font-mono text-[11px] text-muted-foreground">

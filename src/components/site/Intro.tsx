@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-const LINE = "I make sure it's not you.";
+const LINE = "Hey, welcome to my portfolio.";
 
 export function Intro({ onDone }: { onDone: () => void }) {
   const [visible, setVisible] = useState(true);
