@@ -32,7 +32,7 @@ export function MatrixRain({ className = "" }: { className?: string }) {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${size}px monospace`;
       drops.forEach((y, i) => {
-        const char = chars[Math.floor(Math.random() * chars.length)];
+        const char = chars[Math.floor(Math.random() * chars.length)] ?? "0";
         ctx.fillStyle = Math.random() > 0.9 ? "rgba(170,200,255,0.75)" : "rgba(140,110,255,0.45)";
         ctx.fillText(char, i * size, y * size);
         drops[i] = y * size > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
