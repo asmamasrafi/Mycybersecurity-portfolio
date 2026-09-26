@@ -1,4 +1,5 @@
-import { Mail, Flag, Send, type LucideProps } from "lucide-react";
+import type { ComponentType } from "react";
+import { Mail, Flag, Send } from "lucide-react";
 
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -16,14 +17,12 @@ function LinkedinIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-type IconComp = (props: { size?: number }) => JSX.Element;
-
-const socials: { icon: IconComp | ((p: LucideProps) => JSX.Element); label: string; href: string }[] = [
+const socials: { icon: ComponentType<{ size?: number }>; label: string; href: string }[] = [
   { icon: GithubIcon, label: "GitHub", href: "#" },
   { icon: LinkedinIcon, label: "LinkedIn", href: "#" },
-  { icon: Mail as unknown as IconComp, label: "Email", href: "#" },
-  { icon: Flag as unknown as IconComp, label: "TryHackMe", href: "#" },
-  { icon: Send as unknown as IconComp, label: "Telegram", href: "#" },
+  { icon: Mail, label: "Email", href: "#" },
+  { icon: Flag, label: "TryHackMe", href: "#" },
+  { icon: Send, label: "Telegram", href: "#" },
 ];
 
 export function Contact() {
