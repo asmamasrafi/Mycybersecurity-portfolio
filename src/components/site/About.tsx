@@ -1,18 +1,53 @@
 import { motion } from "motion/react";
-import { GraduationCap, MapPin, Flag, Radar } from "lucide-react";
+import { BookOpenCheck, GraduationCap } from "lucide-react";
 
-const details = [
-  { icon: GraduationCap, label: "5th-year engineering student in Cybersecurity — ENSA Agadir" },
-  { icon: MapPin, label: "Based in Agadir, Morocco · open to 6-month internship / PFE" },
-  { icon: Flag, label: "Focused on AI security, red/blue team practices and secure architectures" },
-  { icon: Radar, label: "Interested in secure AI systems, Big Data security and risk governance" },
+const approach = [
+  {
+    icon: GraduationCap,
+    title: "Formation",
+    description: "Cycle ingénieur en cybersécurité · ENSA Agadir · promotion 2027",
+  },
+  {
+    icon: BookOpenCheck,
+    title: "Ma démarche",
+    description:
+      "Comprendre une menace, la détecter, puis traduire les constats en actions concrètes.",
+  },
 ];
 
-const tags = ["#Cybersecurity", "#AI Security", "#Python", "#Big Data", "#Red Team", "#Blue Team", "#OWASP", "#Risk Governance"];
+const interests = [
+  {
+    title: "Détection & SOC",
+    description: "Analyse de journaux, règles de détection, alertes et investigation.",
+    tools: "Splunk · Snort · AIDE · Wireshark · IoC",
+  },
+  {
+    title: "Gouvernance & conformité",
+    description: "Évaluation de maturité, analyse de risques et priorisation des remédiations.",
+    tools: "ISO/IEC 27001 · CMRPI/AUSIM · NIST CSF · CIS/SCAP · CVSS",
+  },
+  {
+    title: "Tests & sécurité applicative",
+    description: "Audit d’applications, validation des contrôles et sécurisation des données.",
+    tools: "Kali Linux · Nmap · Burp Suite · OWASP",
+  },
+  {
+    title: "Développement & automatisation",
+    description: "Des outils et scripts au service de pratiques de sécurité reproductibles.",
+    tools: "Python · Bash · Git · Docker · PostgreSQL",
+  },
+];
 
 export function About() {
   return (
-    <section id="about" className="relative py-24">
+    <motion.section
+      id="about"
+      className="relative scroll-mt-24 py-24"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.65 }}
+    >
       <div className="mx-auto max-w-6xl px-5">
         <div className="relative mb-12">
           <span
@@ -22,85 +57,75 @@ export function About() {
             {"01001000 01000001 01000011 01001011 ".repeat(6)}
           </span>
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
-            ABOUT <span className="neon-text">ME</span>
+            À PRO<span className="neon-text">POS</span>
           </h2>
-          <p className="mt-2 font-mono text-xs text-muted-foreground">// who is behind the keyboard</p>
+          <p className="mt-2 font-mono text-xs text-muted-foreground">
+            // une approche concrète et orientée défense
+          </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass glow-hover rounded-2xl p-7 md:col-span-2"
-          >
-            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-              I&apos;m a cybersecurity engineering student with a strong interest in how AI systems,
-              data platforms and business applications can be secured in real-world environments.
-              I enjoy exploring offensive and defensive approaches, from intrusion testing to
-              secure architecture design and governance.
+        <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="glass glow-hover rounded-2xl p-7 sm:p-8">
+            <h3 className="font-display text-xl font-semibold text-foreground">Mon profil</h3>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+              Élève ingénieure en cybersécurité à l’ENSA Agadir (promotion 2027), je m’intéresse à
+              la détection des menaces, aux audits et à la gouvernance.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              My work combines cybersecurity, secure software development, risk analysis and hands-on
-              labs, with a practical interest in AI security, Big Data security and enterprise
-              security audits.
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              J’aime transformer les constats techniques en recommandations claires et concrètes.
             </p>
-            <ul className="mt-6 space-y-3">
-              {details.map(({ icon: Icon, label }) => (
-                <li key={label} className="flex items-start gap-3 font-mono text-xs text-muted-foreground sm:text-sm">
-                  <Icon size={15} className="mt-0.5 shrink-0 text-neon" />
-                  {label}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="glass glow-hover rounded-2xl p-7"
-          >
-            <p className="font-mono text-[11px] tracking-widest text-muted-foreground">CURRENT_FOCUS</p>
-            <div className="mt-5 space-y-5">
-              {[
-                { k: "Cybersecurity", v: 85 },
-                { k: "AI security", v: 75 },
-                { k: "Python & scripting", v: 80 },
-                { k: "Risk governance", v: 70 },
-              ].map((s) => (
-                <div key={s.k}>
-                  <div className="flex justify-between font-mono text-[11px] text-muted-foreground">
-                    <span>{s.k}</span>
-                    <span className="text-cyan">{s.v}%</span>
-                  </div>
-                  <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-secondary">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${s.v}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.9, ease: "easeOut" }}
-                      className="h-full rounded-full bg-[image:var(--gradient-neon)]"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {approach.map(({ icon: Icon, title, description }, index) => (
+              <motion.article
+                key={title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08, duration: 0.45 }}
+                className="glass glow-hover rounded-2xl p-5"
+              >
+                <Icon size={19} className="text-neon" />
+                <h3 className="mt-4 font-display text-base font-semibold text-foreground">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+              </motion.article>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          {tags.map((t) => (
-            <span
-              key={t}
-              className="glass rounded-lg px-3 py-1.5 font-mono text-[11px] text-muted-foreground transition-colors hover:text-cyan"
-            >
-              {t}
-            </span>
-          ))}
+        <div className="mt-14">
+          <div className="mb-6">
+            <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
+              Mes domaines d’intérêt
+            </h3>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Des compétences travaillées à travers ma formation, mes laboratoires pratiques et les
+              projets présentés dans ce portfolio.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {interests.map(({ title, description, tools }, index) => (
+              <motion.article
+                key={title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.07, duration: 0.45 }}
+                className="glass glow-hover rounded-2xl p-6"
+              >
+                <h4 className="font-display text-lg font-semibold text-foreground">{title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                <p className="mt-4 border-t border-border pt-3 font-mono text-xs leading-relaxed text-cyan">
+                  {tools}
+                </p>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

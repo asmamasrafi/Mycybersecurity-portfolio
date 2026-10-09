@@ -9,9 +9,9 @@ import { Projects } from "@/components/site/Projects";
 import { Certifications } from "@/components/site/Certifications";
 import { Contact } from "@/components/site/Contact";
 
-const title = "Assma Masrafi — Cybersecurity Portfolio";
+const title = "Assma Masrafi — Portfolio cybersécurité";
 const description =
-  "Cybersecurity engineering student focused on AI security, secure architectures, red/blue team practices and risk governance.";
+  "Portfolio d’Assma Masrafi, élève ingénieure en cybersécurité à l’ENSA Agadir. Projets en détection, audit et gouvernance. Recherche un stage PFE de six mois dès janvier 2027.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

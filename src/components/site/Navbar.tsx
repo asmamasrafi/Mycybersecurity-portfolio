@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
+  { label: "Accueil", href: "#home" },
+  { label: "À propos", href: "#about" },
+  { label: "Apprentissages", href: "#experience" },
+  { label: "Projets", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
 ];
 
@@ -27,7 +27,10 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <a href="#home" className="font-mono text-sm tracking-widest text-muted-foreground transition-colors hover:text-foreground">
+        <a
+          href="#home"
+          className="font-mono text-sm tracking-widest text-muted-foreground transition-colors hover:text-foreground"
+        >
           &lt;<span className="neon-text font-semibold">AM</span>/&gt;
         </a>
 
@@ -52,7 +55,8 @@ export function Navbar() {
         <button
           className="text-muted-foreground md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={open}
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>

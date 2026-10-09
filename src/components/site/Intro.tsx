@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-const LINE = "Hey, welcome to my portfolio.";
+const LINE = "Bienvenue dans mon portfolio.";
 
 export function Intro({ onDone }: { onDone: () => void }) {
   const [visible, setVisible] = useState(true);
@@ -40,7 +40,7 @@ export function Intro({ onDone }: { onDone: () => void }) {
             onClick={() => setVisible(false)}
             className="absolute right-5 bottom-5 rounded-full border border-border px-4 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-neon hover:text-foreground"
           >
-            Skip intro →
+            Passer l’introduction →
           </button>
         </motion.div>
       )}

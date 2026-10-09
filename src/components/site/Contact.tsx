@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
-import { Mail, Flag, Send } from "lucide-react";
+import { motion } from "motion/react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -17,49 +18,84 @@ function LinkedinIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-const socials: { icon: ComponentType<{ size?: number }>; label: string; href: string }[] = [
-  { icon: GithubIcon, label: "GitHub", href: "https://github.com/assma-masrafi" },
-  { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/assma-masrafi" },
-  { icon: Mail, label: "Email", href: "mailto:asmamasrafi.2004@gmail.com" },
-  { icon: Flag, label: "TryHackMe", href: "https://tryhackme.com/" },
-  { icon: Send, label: "Telegram", href: "https://t.me/assma_masrafi" },
+const contacts: {
+  icon: ComponentType<{ size?: number }>;
+  label: string;
+  value: string;
+  href: string;
+}[] = [
+  {
+    icon: Mail,
+    label: "E-mail",
+    value: "asmamasrafi.2004@gmail.com",
+    href: "mailto:asmamasrafi.2004@gmail.com",
+  },
+  {
+    icon: LinkedinIcon,
+    label: "LinkedIn",
+    value: "linkedin.com/in/assma-masrafi",
+    href: "https://www.linkedin.com/in/assma-masrafi",
+  },
+  {
+    icon: GithubIcon,
+    label: "GitHub",
+    value: "github.com/asmamasrafi",
+    href: "https://github.com/asmamasrafi",
+  },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-24">
-      <div className="mx-auto max-w-3xl px-5 text-center">
-        <p className="font-mono text-xs text-muted-foreground">// let&apos;s talk</p>
-        <h2 className="mt-4 font-display text-3xl leading-tight font-bold tracking-[-0.04em] sm:text-5xl">
-          Let&apos;s build <span className="neon-text text-glow">secure AI systems.</span>
-        </h2>
-        <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-          Open to internship and final-year project opportunities in AI security, cybersecurity,
-          governance and secure architecture.
-        </p>
+    <motion.section
+      id="contact"
+      className="relative scroll-mt-24 py-24"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.65 }}
+    >
+      <div className="mx-auto max-w-4xl px-5">
+        <div className="glass glow-neon rounded-3xl p-7 text-center sm:p-12">
+          <p className="font-mono text-xs text-cyan">// parlons cybersécurité</p>
+          <h2 className="mt-4 font-display text-3xl leading-tight font-bold tracking-[-0.04em] sm:text-5xl">
+            Prête à contribuer à vos{" "}
+            <span className="neon-text text-glow">projets de sécurité.</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Je recherche un stage de fin d’études de six mois à partir de janvier 2027. Je souhaite
+            contribuer à des missions en détection, audit ou gouvernance de la cybersécurité, et
+            échanger avec des équipes au Maroc, en France ou à l’international.
+          </p>
 
-        <div className="glass glow-neon mx-auto mt-10 flex w-fit flex-wrap justify-center gap-3 rounded-2xl p-4">
-          {socials.map(({ icon: Icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={label}
-              className="glow-hover flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-secondary/40 text-muted-foreground hover:text-foreground"
-            >
-              <Icon size={18} />
-            </a>
-          ))}
+          <div className="mx-auto mt-9 grid max-w-3xl gap-3 text-left sm:grid-cols-3">
+            {contacts.map(({ icon: Icon, label, value, href }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
+                className="glass glow-hover flex min-w-0 items-center gap-3 rounded-xl p-4"
+              >
+                <Icon size={18} className="shrink-0 text-neon" />
+                <span className="min-w-0">
+                  <span className="block font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                    {label}
+                  </span>
+                  <span className="mt-1 block truncate text-xs text-foreground">{value}</span>
+                </span>
+                <ArrowUpRight size={14} className="ml-auto shrink-0 text-muted-foreground" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
       <footer className="mt-20 border-t border-border py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 font-mono text-[11px] text-muted-foreground sm:flex-row">
-          <span>© {new Date().getFullYear()} Assma Masrafi. All rights reserved.</span>
-          <span>built at 3am with caffeine &amp; curiosity</span>
+          <span>© {new Date().getFullYear()} Assma Masrafi</span>
+          <span>Étudiante ingénieure en cybersécurité · ENSA Agadir</span>
         </div>
       </footer>
-    </section>
+    </motion.section>
   );
 }
