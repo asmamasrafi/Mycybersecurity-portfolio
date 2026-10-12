@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="18" x2="780" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101D32"/>
+      <stop offset="1" stop-color="#0A1A29"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4DE2FF"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(320 0 0 220 601 228)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4" stop-opacity=".19"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v440H0z"/>
+  <path fill="url(#glow)" d="M0 0h800v440H0z"/>
+  <path stroke="#7DD3FC" stroke-opacity=".07" d="M0 55.5h800M0 111.5h800M0 167.5h800M0 223.5h800M0 279.5h800M0 335.5h800M0 391.5h800M56.5 0v440M112.5 0v440M168.5 0v440M224.5 0v440M280.5 0v440M336.5 0v440M392.5 0v440M448.5 0v440M504.5 0v440M560.5 0v440M616.5 0v440M672.5 0v440M728.5 0v440M784.5 0v440"/>
+  <rect x="50" y="52" width="140" height="28" rx="14" fill="#22D3EE" fill-opacity=".11" stroke="#67E8F9" stroke-opacity=".36"/>
+  <circle cx="67" cy="66" r="4" fill="#4DE2FF"/>
+  <text x="80" y="70" fill="#B8F3FF" font-family="monospace" font-size="11" letter-spacing="2">LIVE THREAT DETECTION</text>
+  <text x="50" y="151" fill="#F0FBFF" font-family="Arial,sans-serif" font-size="42" font-weight="700">CyberShield</text>
+  <text x="52" y="181" fill="#A4BACB" font-family="Arial,sans-serif" font-size="16">Network signals into real-time insight.</text>
+  <text x="52" y="218" fill="#8AA4B7" font-family="monospace" font-size="11" letter-spacing="1.4">KAFKA   ·   SPARK STREAMING   ·   AI</text>
+  <path d="M66 308h102l37-54 47 83 44-59h83" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M66 308h102l37-54 47 83 44-59h83v45H66z" fill="#22D3EE" fill-opacity=".06"/>
+  <circle cx="205" cy="254" r="5" fill="#4DE2FF"/>
+  <circle cx="252" cy="337" r="5" fill="#818CF8"/>
+  <rect x="435" y="85" width="298" height="276" rx="20" fill="#0B1425" stroke="#57D8F2" stroke-opacity=".4"/>
+  <text x="462" y="117" fill="#8DA6BA" font-family="monospace" font-size="10" letter-spacing="1.4">STREAM PROCESSING</text>
+  <rect x="463" y="151" width="67" height="42" rx="8" fill="#172740" stroke="#4DE2FF" stroke-opacity=".6"/>
+  <text x="496" y="177" text-anchor="middle" fill="#D7F8FF" font-family="monospace" font-size="12">KAFKA</text>
+  <path d="M536 172h42m-8-7 8 7-8 7" stroke="#55D9F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="585" y="151" width="116" height="42" rx="8" fill="#172740" stroke="#818CF8" stroke-opacity=".65"/>
+  <text x="643" y="177" text-anchor="middle" fill="#E6E3FF" font-family="monospace" font-size="11">SPARK STREAM</text>
+  <path d="M642 200v35m0 0-53 28m53-28 53 28" stroke="#61D8EF" stroke-opacity=".7" stroke-width="2"/>
+  <rect x="554" y="266" width="75" height="39" rx="8" fill="#13283A" stroke="#4DE2FF" stroke-opacity=".5"/>
+  <text x="591" y="290" text-anchor="middle" fill="#C8F6FF" font-family="monospace" font-size="10">CLASSIFY</text>
+  <rect x="656" y="266" width="57" height="39" rx="8" fill="#2C1B36" stroke="#F472B6" stroke-opacity=".5"/>
+  <circle cx="684" cy="285" r="5" fill="#F472B6"/>
+  <text x="634" y="339" text-anchor="middle" fill="#A0B6C8" font-family="monospace" font-size="10">INGEST  →  ANALYZE  →  ALERT</text>
+</svg>

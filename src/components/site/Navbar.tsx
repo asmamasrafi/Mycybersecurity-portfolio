@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { BrandMark } from "./BrandMark";
 
 const links = [
   { label: "Accueil", href: "#home" },
   { label: "À propos", href: "#about" },
-  { label: "Apprentissages", href: "#experience" },
+  { label: "Expériences", href: "#experience" },
   { label: "Projets", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
 ];
@@ -29,9 +30,16 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <a
           href="#home"
-          className="font-mono text-sm tracking-widest text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="Assma Masrafi — Accueil"
+          className="group inline-flex items-center gap-2.5 text-foreground transition-opacity hover:opacity-80"
         >
-          &lt;<span className="neon-text font-semibold">AM</span>/&gt;
+          <BrandMark />
+          <span className="leading-tight">
+            <span className="block font-display text-sm font-semibold tracking-wide">ASSMA</span>
+            <span className="block font-mono text-[9px] tracking-[0.2em] text-muted-foreground">
+              MASRAFI
+            </span>
+          </span>
         </a>
 
         <div className="hidden items-center gap-1 md:flex">

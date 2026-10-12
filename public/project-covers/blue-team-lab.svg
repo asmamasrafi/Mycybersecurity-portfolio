@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11182D"/>
+      <stop offset="1" stop-color="#101F2C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4DE2FF"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(270 0 0 190 611 227)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v440H0z"/>
+  <path fill="url(#glow)" d="M0 0h800v440H0z"/>
+  <path stroke="#67E8F9" stroke-opacity=".07" d="M0 55.5h800M0 111.5h800M0 167.5h800M0 223.5h800M0 279.5h800M0 335.5h800M0 391.5h800M56.5 0v440M112.5 0v440M168.5 0v440M224.5 0v440M280.5 0v440M336.5 0v440M392.5 0v440M448.5 0v440M504.5 0v440M560.5 0v440M616.5 0v440M672.5 0v440M728.5 0v440M784.5 0v440"/>
+  <rect x="50" y="52" width="124" height="28" rx="14" fill="#22D3EE" fill-opacity=".11" stroke="#67E8F9" stroke-opacity=".36"/>
+  <circle cx="67" cy="66" r="4" fill="#4DE2FF"/>
+  <text x="80" y="70" fill="#B8F3FF" font-family="monospace" font-size="11" letter-spacing="2">BLUE TEAM</text>
+  <text x="50" y="151" fill="#F0FBFF" font-family="Arial,sans-serif" font-size="42" font-weight="700">Blue Team Lab</text>
+  <text x="52" y="181" fill="#A4BACB" font-family="Arial,sans-serif" font-size="16">Observe. Detect. Investigate.</text>
+  <text x="52" y="218" fill="#8AA4B7" font-family="monospace" font-size="11" letter-spacing="1.4">SNORT   ·   WIRESHARK   ·   NETWORK IDS</text>
+  <rect x="52" y="257" width="305" height="102" rx="15" fill="#111C2B" stroke="#4DE2FF" stroke-opacity=".34"/>
+  <path d="M72 282h34v24H72zm15 24v15m-15 0h30m-15 0v14m-15 0h30" stroke="#71DCEC" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="89" cy="277" r="5" fill="#4DE2FF"/>
+  <text x="126" y="291" fill="#D8F5FA" font-family="Arial,sans-serif" font-size="14" font-weight="700">Network observability</text>
+  <text x="126" y="314" fill="#9FB4C2" font-family="monospace" font-size="10">PACKETS → RULES → ALERTS</text>
+  <text x="72" y="343" fill="#55D9F2" font-family="monospace" font-size="10">LAB STATUS: MONITORING</text>
+  <circle cx="677" cy="220" r="119" fill="#0C1927" fill-opacity=".72" stroke="#4DE2FF" stroke-opacity=".35"/>
+  <circle cx="677" cy="220" r="82" stroke="#4DE2FF" stroke-opacity=".3"/>
+  <circle cx="677" cy="220" r="43" stroke="#4DE2FF" stroke-opacity=".3"/>
+  <path d="M558 220h238M677 101v238" stroke="#4DE2FF" stroke-opacity=".2"/>
+  <path d="M677 220 747 132" stroke="url(#accent)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M677 220 747 132A119 119 0 0 1 787 220Z" fill="#22D3EE" fill-opacity=".08"/>
+  <circle cx="641" cy="188" r="6" fill="#F472B6"/>
+  <circle cx="716" cy="248" r="5" fill="#A78BFA"/>
+  <circle cx="720" cy="166" r="5" fill="#4DE2FF"/>
+  <circle cx="641" cy="188" r="12" stroke="#F472B6" stroke-opacity=".35"/>
+  <circle cx="716" cy="248" r="11" stroke="#A78BFA" stroke-opacity=".35"/>
+  <rect x="550" y="360" width="254" height="22" rx="11" fill="#102639" stroke="#4DE2FF" stroke-opacity=".24"/>
+  <text x="677" y="375" text-anchor="middle" fill="#B1D7E0" font-family="monospace" font-size="9" letter-spacing="1.2">PORT SCAN DETECTED  ·  SSH WATCH</text>
+</svg>

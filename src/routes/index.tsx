@@ -8,6 +8,7 @@ import { Experience } from "@/components/site/Experience";
 import { Projects } from "@/components/site/Projects";
 import { Certifications } from "@/components/site/Certifications";
 import { Contact } from "@/components/site/Contact";
+import { MatrixRain } from "@/components/site/MatrixRain";
 
 const title = "Assma Masrafi — Portfolio cybersécurité";
 const description =
@@ -31,10 +32,11 @@ function Index() {
   const [introDone, setIntroDone] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative isolate min-h-screen">
+      <MatrixRain />
       <Intro onDone={() => setIntroDone(true)} />
       <div
-        className={`transition-opacity duration-700 ${introDone ? "opacity-100" : "opacity-0"}`}
+        className={`relative z-10 transition-opacity duration-700 ${introDone ? "opacity-100" : "opacity-0"}`}
         aria-hidden={!introDone}
       >
         <Navbar />

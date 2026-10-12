@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E172D"/>
+      <stop offset="1" stop-color="#101C2D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F472B6"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v300H0z"/>
+  <path stroke="#E9A8CF" stroke-opacity=".07" d="M0 60h800M0 120h800M0 180h800M0 240h800M80 0v300M160 0v300M240 0v300M320 0v300M400 0v300M480 0v300M560 0v300M640 0v300M720 0v300"/>
+  <rect x="124" y="48" width="215" height="204" rx="20" fill="#101624" stroke="#F472B6" stroke-opacity=".4" stroke-width="2"/>
+  <path d="M124 91h215" stroke="#F472B6" stroke-opacity=".3"/>
+  <circle cx="148" cy="70" r="5" fill="#FB7185"/>
+  <circle cx="164" cy="70" r="5" fill="#FBBF24"/>
+  <circle cx="180" cy="70" r="5" fill="#34D399"/>
+  <path d="m164 143-22 23 22 23m75-46 22 23-22 23m-18-57-19 68" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M439 150h70m-9-9 9 9-9 9" stroke="#BDA6FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M625 65 697 92v60c0 47-28 78-72 99-44-21-72-52-72-99V92l72-27Z" fill="#211A34" stroke="url(#accent)" stroke-width="3"/>
+  <path d="m590 148 23 23 49-53" stroke="#F9A8D4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="505" y="252" width="240" height="22" rx="11" fill="#28192D"/>
+  <text x="625" y="267" text-anchor="middle" fill="#E9B6D1" font-family="monospace" font-size="9" letter-spacing="1.1">TEST · VALIDATE · SECURE</text>
+</svg>

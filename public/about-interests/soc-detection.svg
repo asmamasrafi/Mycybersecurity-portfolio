@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A2633"/>
+      <stop offset="1" stop-color="#14142B"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4DE2FF"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v300H0z"/>
+  <path stroke="#65DDF4" stroke-opacity=".08" d="M0 60h800M0 120h800M0 180h800M0 240h800M80 0v300M160 0v300M240 0v300M320 0v300M400 0v300M480 0v300M560 0v300M640 0v300M720 0v300"/>
+  <circle cx="587" cy="148" r="94" fill="#091D2B" stroke="#4DE2FF" stroke-opacity=".32"/>
+  <circle cx="587" cy="148" r="63" stroke="#4DE2FF" stroke-opacity=".28"/>
+  <circle cx="587" cy="148" r="31" stroke="#4DE2FF" stroke-opacity=".3"/>
+  <path d="M493 148h188M587 54v188M587 148l62-70" stroke="#4DE2FF" stroke-opacity=".35"/>
+  <path d="M587 148 649 78a94 94 0 0 1 32 70Z" fill="#22D3EE" fill-opacity=".12"/>
+  <circle cx="551" cy="122" r="6" fill="#F472B6"/>
+  <circle cx="611" cy="177" r="5" fill="#A78BFA"/>
+  <circle cx="633" cy="104" r="5" fill="#4DE2FF"/>
+  <rect x="96" y="77" width="204" height="146" rx="16" fill="#0C1A29" stroke="#4DE2FF" stroke-opacity=".34"/>
+  <path d="M119 112h127m-127 20h93m-93 20h116m-116 20h77" stroke="#91DDED" stroke-opacity=".65" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="276" cy="112" r="5" fill="#34D399"/>
+  <circle cx="250" cy="132" r="5" fill="#FBBF24"/>
+  <circle cx="266" cy="152" r="5" fill="#F472B6"/>
+  <path d="M300 150h55m-8-8 8 8-8 8" stroke="url(#line)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="385" y="225" width="322" height="28" rx="14" fill="#102739" stroke="#4DE2FF" stroke-opacity=".25"/>
+  <circle cx="402" cy="239" r="4" fill="#34D399"/>
+  <text x="416" y="243" fill="#B8F3FF" font-family="monospace" font-size="10" letter-spacing="1.5">EVENTS → DETECTIONS → RESPONSE</text>
+</svg>

@@ -1,6 +1,22 @@
 import type { ComponentType } from "react";
 import { motion } from "motion/react";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Mail, Send } from "lucide-react";
+import type { FormEvent } from "react";
+import { BrandMark } from "./BrandMark";
+
+const contactEmail = "asmamasrafi.2004@gmail.com";
+
+function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+  const formData = new FormData(event.currentTarget);
+  const name = String(formData.get("name") ?? "").trim();
+  const email = String(formData.get("email") ?? "").trim();
+  const message = String(formData.get("message") ?? "").trim();
+  const subject = `Message depuis le portfolio — ${name}`;
+  const body = `Bonjour Assma,\n\n${message}\n\nCordialement,\n${name}\n${email}`;
+
+  window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -27,8 +43,8 @@ const contacts: {
   {
     icon: Mail,
     label: "E-mail",
-    value: "asmamasrafi.2004@gmail.com",
-    href: "mailto:asmamasrafi.2004@gmail.com",
+    value: contactEmail,
+    href: `mailto:${contactEmail}`,
   },
   {
     icon: LinkedinIcon,
@@ -87,13 +103,79 @@ export function Contact() {
               </a>
             ))}
           </div>
+
+          <form
+            onSubmit={handleContactSubmit}
+            className="mx-auto mt-8 max-w-3xl rounded-2xl border border-border bg-background/35 p-5 text-left sm:p-7"
+          >
+            <div className="mb-5">
+              <h3 className="font-display text-xl font-semibold text-foreground">
+                Envoyer un message
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Votre application de messagerie s’ouvrira avec votre message prêt à envoyer.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="space-y-2 font-mono text-xs text-muted-foreground">
+                Votre nom
+                <input
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  maxLength={100}
+                  placeholder="Nom et prénom"
+                  className="w-full rounded-xl border border-border bg-background/70 px-4 py-3 font-display text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-neon/70 focus:ring-2 focus:ring-neon/20"
+                />
+              </label>
+              <label className="space-y-2 font-mono text-xs text-muted-foreground">
+                Votre e-mail
+                <input
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  maxLength={254}
+                  placeholder="vous@exemple.com"
+                  className="w-full rounded-xl border border-border bg-background/70 px-4 py-3 font-display text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-neon/70 focus:ring-2 focus:ring-neon/20"
+                />
+              </label>
+              <label className="space-y-2 font-mono text-xs text-muted-foreground sm:col-span-2">
+                Votre message
+                <textarea
+                  name="message"
+                  required
+                  maxLength={5000}
+                  rows={5}
+                  placeholder="Comment puis-je vous aider ?"
+                  className="w-full resize-y rounded-xl border border-border bg-background/70 px-4 py-3 font-display text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-neon/70 focus:ring-2 focus:ring-neon/20"
+                />
+              </label>
+            </div>
+            <button
+              type="submit"
+              className="glow-hover mt-5 inline-flex items-center gap-2 rounded-full border border-neon/60 bg-[linear-gradient(135deg,rgba(132,94,247,0.25),rgba(34,211,238,0.12))] px-5 py-3 font-mono text-sm text-foreground glow-neon"
+            >
+              Préparer l’e-mail <Send size={15} />
+            </button>
+          </form>
         </div>
       </div>
 
       <footer className="mt-20 border-t border-border py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 font-mono text-[11px] text-muted-foreground sm:flex-row">
-          <span>© {new Date().getFullYear()} Assma Masrafi</span>
-          <span>Étudiante ingénieure en cybersécurité · ENSA Agadir</span>
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 sm:flex-row">
+          <a
+            href="#home"
+            aria-label="Assma Masrafi — Accueil"
+            className="inline-flex items-center gap-2 text-foreground transition-opacity hover:opacity-80"
+          >
+            <BrandMark className="h-8 w-8" />
+            <span className="font-display text-sm font-semibold">Assma Masrafi</span>
+          </a>
+          <span className="font-mono text-[11px] text-muted-foreground">
+            © {new Date().getFullYear()} · Étudiante ingénieure en cybersécurité · ENSA Agadir
+          </span>
         </div>
       </footer>
     </motion.section>

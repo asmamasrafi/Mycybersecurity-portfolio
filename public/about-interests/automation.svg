@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="15" y1="10" x2="785" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102333"/>
+      <stop offset="1" stop-color="#17162F"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4DE2FF"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v300H0z"/>
+  <path stroke="#67E8F9" stroke-opacity=".07" d="M0 60h800M0 120h800M0 180h800M0 240h800M80 0v300M160 0v300M240 0v300M320 0v300M400 0v300M480 0v300M560 0v300M640 0v300M720 0v300"/>
+  <rect x="94" y="55" width="280" height="190" rx="17" fill="#091825" stroke="#4DE2FF" stroke-opacity=".38"/>
+  <path d="M94 94h280" stroke="#4DE2FF" stroke-opacity=".25"/>
+  <circle cx="117" cy="75" r="4" fill="#FB7185"/>
+  <circle cx="131" cy="75" r="4" fill="#FBBF24"/>
+  <circle cx="145" cy="75" r="4" fill="#34D399"/>
+  <text x="121" y="126" fill="#4DE2FF" font-family="monospace" font-size="14">$</text>
+  <text x="145" y="126" fill="#D5E6F1" font-family="monospace" font-size="13">analyze --events</text>
+  <text x="121" y="157" fill="#4DE2FF" font-family="monospace" font-size="14">$</text>
+  <text x="145" y="157" fill="#D5E6F1" font-family="monospace" font-size="13">detect --threats</text>
+  <text x="121" y="188" fill="#4DE2FF" font-family="monospace" font-size="14">$</text>
+  <text x="145" y="188" fill="#D5E6F1" font-family="monospace" font-size="13">respond --secure</text>
+  <rect x="121" y="211" width="11" height="2" fill="#4DE2FF"/>
+  <path d="M420 149h70m-9-9 9 9-9 9" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="618" cy="150" r="86" fill="#10182B" stroke="#A78BFA" stroke-opacity=".42" stroke-width="2"/>
+  <circle cx="618" cy="150" r="64" stroke="#4DE2FF" stroke-opacity=".2" stroke-dasharray="5 8"/>
+  <path d="M618 103v94m-47-47h94m-80-33 66 66m0-66-66 66" stroke="#887AF0" stroke-opacity=".5" stroke-width="2"/>
+  <circle cx="618" cy="150" r="26" fill="#20213A" stroke="url(#accent)" stroke-width="2"/>
+  <path d="m608 151 7 7 14-16" stroke="#C4F5FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="618" cy="64" r="5" fill="#4DE2FF"/>
+  <circle cx="704" cy="150" r="5" fill="#A78BFA"/>
+</svg>

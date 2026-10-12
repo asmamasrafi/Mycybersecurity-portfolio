@@ -69,7 +69,8 @@
     color-mix(in oklab, var(--neon) 12%, transparent),
     transparent 60%
   );
-  --glow-neon: 0 0 0 1px color-mix(in oklab, var(--neon) 40%, transparent),
+  --glow-neon:
+    0 0 0 1px color-mix(in oklab, var(--neon) 40%, transparent),
     0 0 24px color-mix(in oklab, var(--neon) 30%, transparent);
   --glow-cyan: 0 0 22px color-mix(in oklab, var(--cyan) 35%, transparent);
   --shadow-card: 0 24px 60px -30px color-mix(in oklab, var(--neon) 45%, transparent);
@@ -86,8 +87,16 @@
 
   body {
     background:
-      radial-gradient(circle at top left, color-mix(in oklab, var(--neon) 18%, transparent), transparent 30%),
-      radial-gradient(circle at bottom right, color-mix(in oklab, var(--cyan) 16%, transparent), transparent 35%),
+      radial-gradient(
+        circle at top left,
+        color-mix(in oklab, var(--neon) 18%, transparent),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        color-mix(in oklab, var(--cyan) 16%, transparent),
+        transparent 35%
+      ),
       var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-display);
@@ -169,6 +178,41 @@
   animation: float-slow 6s ease-in-out infinite;
 }
 
+@keyframes profile-scan {
+  0%,
+  100% {
+    top: 8%;
+    opacity: 0;
+  }
+  12%,
+  82% {
+    opacity: 0.8;
+  }
+  92% {
+    top: 92%;
+    opacity: 0;
+  }
+}
+
+.profile-frame {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--neon) 40%, transparent),
+    0 0 32px color-mix(in oklab, var(--neon) 24%, transparent),
+    0 24px 60px -30px color-mix(in oklab, var(--cyan) 50%, transparent);
+}
+
+.profile-scan {
+  position: absolute;
+  z-index: 1;
+  right: 0.75rem;
+  left: 0.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--neon), transparent);
+  box-shadow: 0 0 14px color-mix(in oklab, var(--cyan) 70%, transparent);
+  animation: profile-scan 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
 @keyframes glitch-shift {
   0%,
   100% {
@@ -187,4 +231,12 @@
 
 @utility glitch-layer {
   animation: glitch-shift 0.7s steps(2, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-scan {
+    animation: none;
+    opacity: 0.45;
+    top: 50%;
+  }
 }

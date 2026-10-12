@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="20" y1="0" x2="780" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20152E"/>
+      <stop offset="1" stop-color="#10192E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F472B6"/>
+      <stop offset="1" stop-color="#9B8CFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(255 35 -24 173 602 211)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EC4899" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v440H0z"/>
+  <path fill="url(#glow)" d="M0 0h800v440H0z"/>
+  <path stroke="#F0A4CE" stroke-opacity=".07" d="M0 55.5h800M0 111.5h800M0 167.5h800M0 223.5h800M0 279.5h800M0 335.5h800M0 391.5h800M56.5 0v440M112.5 0v440M168.5 0v440M224.5 0v440M280.5 0v440M336.5 0v440M392.5 0v440M448.5 0v440M504.5 0v440M560.5 0v440M616.5 0v440M672.5 0v440M728.5 0v440M784.5 0v440"/>
+  <rect x="50" y="52" width="155" height="28" rx="14" fill="#F472B6" fill-opacity=".12" stroke="#F7A8D5" stroke-opacity=".36"/>
+  <circle cx="67" cy="66" r="4" fill="#F472B6"/>
+  <text x="80" y="70" fill="#FFD2EA" font-family="monospace" font-size="11" letter-spacing="2">MOBILE SECURITY</text>
+  <text x="50" y="145" fill="#FFF4FA" font-family="Arial,sans-serif" font-size="34" font-weight="700">Android Security Audit</text>
+  <text x="52" y="177" fill="#B8A8B9" font-family="Arial,sans-serif" font-size="16">Protecting what should stay private.</text>
+  <text x="52" y="216" fill="#9A8CA0" font-family="monospace" font-size="11" letter-spacing="1.4">OWASP MASVS   ·   SECRETS   ·   LOGCAT</text>
+  <rect x="52" y="252" width="342" height="104" rx="16" fill="#241A31" stroke="#E879B7" stroke-opacity=".35"/>
+  <circle cx="90" cy="304" r="20" fill="#F472B6" fill-opacity=".13" stroke="#F472B6" stroke-opacity=".65"/>
+  <path d="M83 303v-5a7 7 0 0 1 14 0v5m-16 0h18v15H81z" stroke="#FDA4D1" stroke-width="2" stroke-linejoin="round"/>
+  <text x="126" y="299" fill="#F7EAF2" font-family="Arial,sans-serif" font-size="15" font-weight="700">Sensitive data protected</text>
+  <text x="126" y="322" fill="#A99BAE" font-family="monospace" font-size="10">STORAGE   ·   UI   ·   LOGS</text>
+  <rect x="481" y="58" width="221" height="338" rx="32" fill="#0C1020" stroke="#F18FC4" stroke-opacity=".55" stroke-width="2"/>
+  <rect x="494" y="74" width="195" height="306" rx="23" fill="#171528"/>
+  <rect x="551" y="62" width="80" height="6" rx="3" fill="#43334A"/>
+  <circle cx="592" cy="225" r="74" fill="#F472B6" fill-opacity=".07"/>
+  <path d="M592 148l54 20v48c0 39-24 65-54 82-30-17-54-43-54-82v-48l54-20Z" fill="#251A39" stroke="url(#accent)" stroke-width="3"/>
+  <path d="M567 218l17 17 35-38" stroke="#FDB4DB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="523" y="329" width="139" height="8" rx="4" fill="#383046"/>
+  <rect x="523" y="329" width="112" height="8" rx="4" fill="url(#accent)"/>
+</svg>

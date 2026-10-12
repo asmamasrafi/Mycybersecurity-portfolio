@@ -100,14 +100,15 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="relative mx-auto w-full max-w-sm"
         >
-          <div className="glass glow-hover group relative rounded-3xl p-3">
+          <div className="profile-frame glass glow-hover group relative rounded-3xl p-3">
             <div className="relative overflow-hidden rounded-2xl bg-secondary/60">
               <img
                 src="/profile.jpeg"
                 alt="Assma Masrafi, élève ingénieure en cybersécurité"
-                className="aspect-[4/5] w-full object-cover object-center"
+                className="aspect-[4/5] w-full object-cover object-center transition duration-700 group-hover:scale-105 group-hover:saturate-125"
                 fetchPriority="high"
               />
+              <span className="profile-scan" aria-hidden="true" />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
               <div className="absolute inset-x-3 top-3 flex justify-between font-mono text-[10px]">
                 <span className="glass rounded-md px-2 py-1 text-foreground">ENSA AGADIR</span>

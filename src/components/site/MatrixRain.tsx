@@ -14,11 +14,12 @@ export function MatrixRain({ className = "" }: { className?: string }) {
     let drops: number[] = [];
     const size = 14;
     const chars = "01アイウエオカキクケコｱｲｳ$#%&*<>{}[]/\\";
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const resize = () => {
-      const parent = canvas.parentElement;
-      canvas.width = parent?.clientWidth ?? window.innerWidth;
-      canvas.height = parent?.clientHeight ?? window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       drops = new Array(Math.ceil(canvas.width / size)).fill(0).map(() => Math.random() * -50);
     };
     resize();
@@ -38,11 +39,22 @@ export function MatrixRain({ className = "" }: { className?: string }) {
         drops[i] = y * size > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
       });
     };
-    draw();
+
+    const updateMotion = () => {
+      if (motionPreference.matches) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+        return;
+      }
+      if (!raf) draw();
+    };
+    updateMotion();
+    motionPreference.addEventListener("change", updateMotion);
 
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
+      motionPreference.removeEventListener("change", updateMotion);
     };
   }, []);
 
@@ -50,7 +62,7 @@ export function MatrixRain({ className = "" }: { className?: string }) {
     <canvas
       ref={ref}
       aria-hidden
-      className={`pointer-events-none absolute inset-0 h-full w-full opacity-35 ${className}`}
+      className={`pointer-events-none fixed inset-0 z-0 h-dvh w-full opacity-20 ${className}`}
     />
   );
 }

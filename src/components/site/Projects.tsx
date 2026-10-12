@@ -8,13 +8,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { MatrixRain } from "./MatrixRain";
 
 type Category = "Gouvernance" | "Audit" | "Détection" | "Sécurité réseau" | "Infrastructure";
 
 type Project = {
   title: string;
   category: Category;
+  cover: string;
   description: string;
   context: string;
   contribution: string;
@@ -27,6 +27,7 @@ const projects: Project[] = [
   {
     title: "CyberAudit",
     category: "Gouvernance",
+    cover: "/project-covers/cyberaudit.svg",
     description:
       "Une plateforme d’évaluation de la maturité cybersécurité conçue pour aider les PME marocaines à structurer leur démarche de sécurité.",
     context:
@@ -44,6 +45,7 @@ const projects: Project[] = [
   {
     title: "Audit de sécurité Android",
     category: "Audit",
+    cover: "/project-covers/android-audit.svg",
     description:
       "Un audit d’application mobile selon OWASP MASVS, centré sur la protection des secrets, des données sensibles et des journaux.",
     context:
@@ -61,6 +63,7 @@ const projects: Project[] = [
   {
     title: "CyberShield",
     category: "Détection",
+    cover: "/project-covers/cybershield.svg",
     description:
       "Un pipeline de détection d’intrusions en temps réel qui associe traitement distribué, classification du trafic par IA et tableau de bord d’alertes.",
     context:
@@ -78,6 +81,7 @@ const projects: Project[] = [
   {
     title: "Détection de brute force SSH avec Splunk",
     category: "Détection",
+    cover: "/project-covers/splunk-ssh.svg",
     description:
       "Un cas d’usage SOC consacré à l’analyse des authentifications SSH et à la détection des tentatives répétées de connexion.",
     context:
@@ -95,6 +99,7 @@ const projects: Project[] = [
   {
     title: "Blue Team Lab",
     category: "Sécurité réseau",
+    cover: "/project-covers/blue-team-lab.svg",
     description:
       "Un laboratoire de détection réseau consacré aux scans de ports et aux tentatives de brute force SSH.",
     context:
@@ -112,6 +117,7 @@ const projects: Project[] = [
   {
     title: "Gestion des secrets avec Vault",
     category: "Infrastructure",
+    cover: "/project-covers/vault-secrets.svg",
     description:
       "Un laboratoire conteneurisé qui montre comment une application Flask peut récupérer des secrets PostgreSQL depuis HashiCorp Vault.",
     context:
@@ -153,7 +159,6 @@ export function Projects() {
         viewport={{ once: true, amount: 0.12 }}
         transition={{ duration: 0.65 }}
       >
-        <MatrixRain className="opacity-20" />
         <div className="relative mx-auto max-w-6xl px-5">
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
             MES <span className="neon-text">PROJETS</span>
@@ -192,6 +197,13 @@ export function Projects() {
                 transition={{ delay: index * 0.05, duration: 0.45 }}
                 className="glass glow-hover flex flex-col overflow-hidden rounded-2xl"
               >
+                <img
+                  src={project.cover}
+                  alt={`Illustration du projet ${project.title}`}
+                  className="aspect-[20/11] w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="flex items-center gap-1.5 border-b border-border px-4 py-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
                   <span className="h-2.5 w-2.5 rounded-full bg-cyan/60" />
