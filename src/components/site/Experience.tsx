@@ -149,7 +149,7 @@ export function Experience() {
               >
                 <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-neon/10 blur-3xl transition-colors group-hover:bg-cyan/15" />
                 <div className="relative">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start justify-between gap-4">
                     <div className="min-w-0 flex-1">
                       <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-cyan">
                         Expérience · {String(index + 1).padStart(2, "0")}
@@ -158,30 +158,32 @@ export function Experience() {
                         {role}
                       </h3>
                     </div>
-                    <ArrowUpRight
-                      size={16}
-                      className="mt-1 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan"
-                      aria-hidden="true"
-                    />
+                    <div className="flex shrink-0 flex-col items-center gap-2">
+                      <span className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-neon/35 bg-white p-2 shadow-[0_0_22px_-8px_var(--neon)]">
+                        <img
+                          src={logo}
+                          alt={`Logo ${company}`}
+                          className="h-full w-full object-contain"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </span>
+                      <ArrowUpRight
+                        size={14}
+                        className="text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan"
+                        aria-hidden="true"
+                      />
+                    </div>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
-                    <img
-                      src={logo}
-                      alt={`Logo ${company}`}
-                      className="h-11 w-[4.5rem] rounded-lg border border-border bg-white p-1.5 object-contain"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="flex flex-wrap gap-x-4 gap-y-2 font-mono text-[11px]">
-                      <span className="text-foreground/90">{company}</span>
-                      <span className="inline-flex items-center gap-1 text-muted-foreground">
-                        <MapPin size={12} /> {location}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-muted-foreground">
-                        <CalendarDays size={12} /> {period}
-                      </span>
-                    </div>
+                  <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[11px]">
+                    <span className="text-foreground/90">{company}</span>
+                    <span className="inline-flex items-center gap-1 text-muted-foreground">
+                      <MapPin size={12} /> {location}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-muted-foreground">
+                      <CalendarDays size={12} /> {period}
+                    </span>
                   </div>
 
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{summary}</p>
