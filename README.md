@@ -32,20 +32,6 @@ The project uses Nitro's Vercel preset and produces Vercel's deployment output d
 `npm run build`; leave Vercel's output directory unset. The `vercel.json` file selects
 the TanStack Start framework preset when automatic detection is unavailable.
 
-### Contact form email
-
-The contact form sends messages through Resend from a TanStack Start server function.
-Configure these environment variables in Vercel (and in a local, untracked `.env` file
-for local testing):
-
-- `RESEND_API_KEY`: a Resend API key. Keep it server-side; do not prefix it with `VITE_`.
-- `RESEND_FROM_EMAIL`: a sender address on a domain verified in Resend, for example
-  `Portfolio <contact@your-verified-domain.example>`.
-
-The recipient is `asmamasrafi.2004@gmail.com`. Set the variables for the Production
-environment in Vercel, then redeploy. Until configured, the form reports that sending
-is unavailable and the direct email link remains available.
-
 To check the production build locally, run:
 
 ```sh

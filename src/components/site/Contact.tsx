@@ -1,12 +1,22 @@
-import { useState, type ComponentType } from "react";
+import type { ComponentType } from "react";
 import { motion } from "motion/react";
-import { useServerFn } from "@tanstack/react-start";
-import { ArrowUpRight, LoaderCircle, Mail, Send } from "lucide-react";
+import { ArrowUpRight, Mail, Send } from "lucide-react";
 import type { FormEvent } from "react";
 import { BrandMark } from "./BrandMark";
-import { sendContactMessage } from "@/lib/send-contact-message";
 
 const contactEmail = "asmamasrafi.2004@gmail.com";
+
+function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+  const formData = new FormData(event.currentTarget);
+  const name = String(formData.get("name") ?? "").trim();
+  const email = String(formData.get("email") ?? "").trim();
+  const message = String(formData.get("message") ?? "").trim();
+  const subject = `Message depuis le portfolio — ${name}`;
+  const body = `Bonjour Assma,\n\n${message}\n\nCordialement,\n${name}\n${email}`;
+
+  window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -51,40 +61,6 @@ const contacts: {
 ];
 
 export function Contact() {
-  const sendContactMessageFn = useServerFn(sendContactMessage);
-  const [sending, setSending] = useState(false);
-  const [submissionMessage, setSubmissionMessage] = useState("");
-  const [submissionSucceeded, setSubmissionSucceeded] = useState(false);
-
-  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    setSending(true);
-    setSubmissionMessage("");
-
-    try {
-      const result = await sendContactMessageFn({
-        data: {
-          name: String(formData.get("name") ?? ""),
-          email: String(formData.get("email") ?? ""),
-          message: String(formData.get("message") ?? ""),
-        },
-      });
-      setSubmissionSucceeded(result.success);
-      setSubmissionMessage(result.message);
-      if (result.success) form.reset();
-    } catch (error) {
-      console.error("Contact form submission failed.", error);
-      setSubmissionSucceeded(false);
-      setSubmissionMessage(
-        "Une erreur empêche l’envoi du message. Réessayez ou contactez-moi directement par e-mail.",
-      );
-    } finally {
-      setSending(false);
-    }
-  }
-
   return (
     <motion.section
       id="contact"
@@ -137,7 +113,7 @@ export function Contact() {
                 Envoyer un message
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Envoyez-moi directement votre message depuis ce formulaire.
+                Votre application de messagerie s’ouvrira avec le message prêt à envoyer.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -177,29 +153,11 @@ export function Contact() {
                 />
               </label>
             </div>
-            {submissionMessage && (
-              <p
-                role="status"
-                aria-live="polite"
-                className={`mt-4 text-sm ${submissionSucceeded ? "text-cyan" : "text-destructive"}`}
-              >
-                {submissionMessage}
-              </p>
-            )}
             <button
               type="submit"
-              disabled={sending}
               className="glow-hover mt-5 inline-flex items-center gap-2 rounded-full border border-neon/60 bg-[linear-gradient(135deg,rgba(132,94,247,0.25),rgba(34,211,238,0.12))] px-5 py-3 font-mono text-sm text-foreground glow-neon"
             >
-              {sending ? (
-                <>
-                  Envoi en cours <LoaderCircle size={15} className="animate-spin" />
-                </>
-              ) : (
-                <>
-                  Envoyer le message <Send size={15} />
-                </>
-              )}
+              Préparer l’e-mail <Send size={15} />
             </button>
           </form>
         </div>
