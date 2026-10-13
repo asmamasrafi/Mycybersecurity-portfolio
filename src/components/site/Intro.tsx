@@ -36,12 +36,6 @@ export function Intro({ onDone }: { onDone: () => void }) {
             {typed}
             <span className="caret ml-0.5 text-neon">_</span>
           </p>
-          <button
-            onClick={() => setVisible(false)}
-            className="absolute right-5 bottom-5 rounded-full border border-border px-4 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-neon hover:text-foreground"
-          >
-            Passer l’introduction →
-          </button>
         </motion.div>
       )}
     </AnimatePresence>
